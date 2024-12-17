@@ -1,0 +1,44 @@
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$DBname = "berita-lat1";
+
+// Membuat koneksi
+$conn = new mysqli($servername, $username, $password, $DBname);
+
+// Memeriksa koneksi
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully<br>";
+
+// Mengambil nilai dari form
+$name = $_POST["name"];
+$email = $_POST["email"];
+$kelamin = $_POST["kelamin"];
+$tanggallahir = $_POST["tanggallahir"];
+$umur = $_POST["umur"];
+
+// Memperbaiki query SQL dengan penggunaan backtick (`) dan menghindari kesalahan tanda kutip
+$sql = "INSERT INTO user (Nama, Email, `Jenis-kelamin`, `Tanggal-lahir`, Umur) 
+        VALUES ('$name', '$email', '$kelamin', '$tanggallahir', '$umur')";
+
+// Eksekusi query
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully<br>";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+// Menutup koneksi
+$conn->close();
+
+// Menampilkan data yang diambil
+echo("Nama: {$name} <br>");
+echo("Email: {$email} <br>");
+echo("Jenis Kelamin: {$kelamin} <br>");
+echo("Tanggal Lahir: {$tanggallahir} <br>");
+echo("Umur kamu saat ini: {$umur} <br>");
+?>
