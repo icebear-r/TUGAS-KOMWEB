@@ -1,0 +1,67 @@
+body {
+    margin: 0px;
+  }
+  
+.navbar ul{
+  list-style-type: none;
+  background-color:grey;
+  padding: 0px;
+  margin:0px;
+  overflow: hidden;
+}
+
+.navbar a{
+  color :white;
+  text-decoration: none;
+  padding: 15px;
+  display:block;
+  text-align: center;
+}
+
+.navbar a:hover{
+  background-color: black;
+}
+
+.navbar li{
+  float: left;
+}
+
+.fotoutama{
+  width: 1500px;
+  height: 250px;
+}
+
+.foto1{
+  width: 300px;
+}
+
+.foto2{
+  width: 500px;
+}
+
+.footer{
+  background-color:grey;
+  padding: 15px;
+}
+
+.beritafoto1{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.beritafoto2{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.div p {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
